@@ -1,0 +1,11 @@
+{% extends 'managment/base.html' %} <br />
+{% load crispy_forms_tags %} <br />
+
+{% block title %}Add trainer{% endblock title %} {% block content %}
+<h2>Add Trainer</h2>
+<form class="p-3 mb-2 bg-dark text-white" method="POST">
+  {% csrf_token %} {{ form|crispy }} <br />
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}

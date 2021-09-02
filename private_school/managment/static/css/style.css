@@ -1,0 +1,81 @@
+body {
+  background-color: #9fc6c6;
+}
+
+.logo {
+  height: 80px;
+  border-radius: 50%;
+}
+
+.container {
+  padding-top: 150px;
+}
+
+.field {
+  padding: 10px;
+}
+
+/* .forms {
+  padding: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: #437070;
+} */
+
+svg {
+  height: 100px;
+  width: auto;
+}
+
+.card {
+  padding-top: 10px;
+  background-color: #437070;
+  border: solid 3px black;
+  border-radius: 5px;
+  color: black;
+}
+
+.btn {
+  background-color: #1d3030;
+  border-color: black;
+}
+
+.add-button,
+#list-button {
+  margin-bottom: 20px;
+}
+
+#table-title {
+  text-align: center;
+}
+
+#form-title {
+  text-align: center;
+}
+
+#my-form {
+  border: solid black 3px;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.not-display {
+  display: none;
+}
+
+.form-group small {
+  visibility: hidden;
+}
+
+.form-group.success input {
+  color: green;
+}
+
+.form-group.error input {
+  border-color: red;
+}
+
+.form-group.error small {
+  visibility: visible;
+}

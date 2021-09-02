@@ -1,0 +1,83 @@
+{% extends 'managment/base.html' %}<br />
+{% load static %} <br />
+{% block title %}Trainers{% endblock title %} {% block content %} <br />
+{% if message %}
+<h1>{{ message}}</h1>
+{% endif %}
+
+<a
+  id="add-trainer-button"
+  href="/managment/trainer_add/"
+  class="btn btn-secondary btn-lg btn-block add-button"
+  >Add New Trainer</a
+>
+
+<table class="table table-striped table-dark" id="trainer-list">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th
+        class="trainer-table-head"
+        data-column="1"
+        data-order="desc"
+        scope="col"
+      >
+        Firstname
+      </th>
+      <th
+        class="trainer-table-head"
+        data-column="2"
+        data-order="desc"
+        scope="col"
+      >
+        Lastname
+      </th>
+      <th scope="col">Subject</th>
+      <th scope="col">Courses</th>
+      <th scope="col">Details</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+
+  <tbody class="body-table" id="trainer-table">
+    {% for trainer in trainers %}
+    <tr>
+      <th scope="row">{{ trainer.id }}</th>
+      <td>{{ trainer.first_name }}</td>
+      <td>{{ trainer.last_name }}</td>
+      <td>{{ trainer.subject }}</td>
+      <td>
+        {% for course in trainer.courses.all %}
+        <ul>
+          {{ course }}
+        </ul>
+        {% endfor %}
+      </td>
+      <td>
+        <a href="/managment/trainer_details/{{trainer.id}}"
+          ><button type="button" class="btn btn-secondary btn-sm">
+            Details
+          </button></a
+        >
+      </td>
+      <td>
+        <a href="/managment/trainer_edit/{{trainer.id}}"
+          ><button type="button" class="btn btn-secondary btn-sm">
+            Edit
+          </button></a
+        >
+      </td>
+      <td>
+        <a href="/managment/trainer_delete/{{trainer.id}}"
+          ><button type="button" class="btn btn-secondary btn-sm">
+            Delete
+          </button></a
+        >
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

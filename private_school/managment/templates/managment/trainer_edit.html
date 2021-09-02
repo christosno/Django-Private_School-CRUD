@@ -1,0 +1,70 @@
+{% extends 'managment/base.html' %} <br />
+
+{% block title %}Edit Trainer{% endblock title %} <br />
+
+{% block content %}
+<h1>Edit {{trainer.first_name}} {{trainer.last_name}}</h1>
+
+<form method="POST" class="p-3 mb-2 bg-dark text-white">
+  {% csrf_token %}
+  <h1>Trainer Form</h1>
+  <div class="form-group">
+    <label for="trainer-firstname">First Name</label>
+    <input
+      type="text"
+      class="form-control"
+      name="first_name"
+      id="trainer-firstname"
+      value="{{ trainer.first_name }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="trainer-lastname">Last Name</label>
+    <input
+      type="text"
+      class="form-control"
+      name="last_name"
+      id="trainer-lastname"
+      value="{{ trainer.last_name }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input
+      type="text"
+      class="form-control"
+      name="subject"
+      id="subject"
+      value="{{ trainer.subject }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="trainer-course">Courses</label>
+    <select
+      multiple
+      class="form-control course-select"
+      name="courses"
+      id="trainer-course"
+      size="5"
+    >
+      <br />
+      {% for course in courses %}
+      <br />
+      {% if course in tr_courses %}
+      <option selected value="{{course.id}}">{{ course }}</option>
+      {% else %}
+      <option value="{{course.id}}">{{ course }}</option>
+      {% endif %} {% endfor %}
+    </select>
+  </div>
+  <br />
+  <button
+    id="submit-trainer-form"
+    type="submit"
+    class="btn btn-primary submit-trainer"
+  >
+    Submit
+  </button>
+</form>
+
+{% endblock content %}

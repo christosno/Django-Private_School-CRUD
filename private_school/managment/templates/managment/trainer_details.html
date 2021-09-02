@@ -1,0 +1,21 @@
+{% extends 'managment/base.html' %} <br />
+{% block title %}Trainer Details{% endblock title %} <br />
+{% load static %} <br />
+{% block content %}
+<h2>Trainer Details</h2>
+<div class="card" style="width: 18rem">
+  <div class="card-header">
+    Name : {{ trainer.first_name }} {{ trainer.last_name }}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Subject : {{ trainer.subject }}</li>
+    <li class="list-group-item">
+      Courses : {% for course in trainer.courses.all %}
+      <ol>
+        {{course}}
+      </ol>
+      {% endfor %}
+    </li>
+  </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,236 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Main Page{% endblock %}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    {% block css %}{% endblock css %}
+  </head>
+</html>
+
+<body>
+  {% block header %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/managment/"
+      ><img
+        class="logo"
+        src="{% static 'privet_school_logo.png' %}"
+        alt="school logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Students</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/managment/trainers/">Trainers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Assignments</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  {% endblock header %}
+
+  <div class="container">
+    <div class="home-page">
+      <div class="row">
+        {% block content %}
+
+        <div class="col-lg-3 col-md-6 col-sm-6 field">
+          <div class="card">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Courses</title>
+              <rect
+                x="32"
+                y="96"
+                width="64"
+                height="368"
+                rx="16"
+                ry="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M112 224h128M112 400h128"
+              />
+              <rect
+                x="112"
+                y="160"
+                width="128"
+                height="304"
+                rx="16"
+                ry="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <rect
+                x="256"
+                y="48"
+                width="96"
+                height="416"
+                rx="16"
+                ry="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M422.46 96.11l-40.4 4.25c-11.12 1.17-19.18 11.57-17.93 23.1l34.92 321.59c1.26 11.53 11.37 20 22.49 18.84l40.4-4.25c11.12-1.17 19.18-11.57 17.93-23.1L445 115c-1.31-11.58-11.42-20.06-22.54-18.89z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Courses</h5>
+              <p class="card-text">
+                Choose to add, edit, delete and read courses.
+              </p>
+              <a href="#" class="btn btn-primary cour-page">Go to courses</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 field">
+          <div class="card">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Students</title>
+              <path
+                d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M256 304c-87 0-175.3 48-191.64 138.6C62.39 453.52 68.57 464 80 464h352c11.44 0 17.62-10.48 15.65-21.4C431.3 352 343 304 256 304z"
+                fill="none"
+                stroke="currentColor"
+                stroke-miterlimit="10"
+                stroke-width="32"
+              />
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Students</h5>
+              <p class="card-text">
+                Choose to add, edit, delete and read students.
+              </p>
+              <a href="#" class="btn btn-primary stud-page">Go to students</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 field">
+          <div class="card">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Trainers</title>
+              <path
+                d="M332.64 64.58C313.18 43.57 286 32 256 32c-30.16 0-57.43 11.5-76.8 32.38-19.58 21.11-29.12 49.8-26.88 80.78C156.76 206.28 203.27 256 256 256s99.16-49.71 103.67-110.82c2.27-30.7-7.33-59.33-27.03-80.6zM432 480H80a31 31 0 01-24.2-11.13c-6.5-7.77-9.12-18.38-7.18-29.11C57.06 392.94 83.4 353.61 124.8 326c36.78-24.51 83.37-38 131.2-38s94.42 13.5 131.2 38c41.4 27.6 67.74 66.93 76.18 113.75 1.94 10.73-.68 21.34-7.18 29.11A31 31 0 01432 480z"
+              />
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Trainers</h5>
+              <p class="card-text">
+                Choose to add, edit, delete and read trainers.
+              </p>
+              <a href="/managment/trainers/" class="btn btn-primary train-page"
+                >Go to trainers</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 field">
+          <div class="card">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <title>Assignments</title>
+              <path
+                d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z"
+                fill="none"
+                stroke="currentColor"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+              <path
+                d="M256 56v120a32 32 0 0032 32h120M176 288h160M176 368h160"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+              />
+            </svg>
+            <div class="card-body">
+              <h5 class="card-title">Assignments</h5>
+              <p class="card-text">
+                Choose to add, edit, delete and read assignments.
+              </p>
+              <a href="#" class="btn btn-primary ass-page">Go to assignments</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endblock content%}
+    </div>
+  </div>
+</body>
