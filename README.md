@@ -19,7 +19,7 @@
 
 # Setup
 
-- Create virtual environment
+- Install Django
 ```
 pip install django
 ```
